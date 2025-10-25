@@ -1,5 +1,5 @@
 class Solution {
-    public String mergeAlternately(String word1, String word2) {
+    public String mergeAlternately(String word1, String word2){
         StringBuilder res = new StringBuilder();
         int w1,w2;
         w1 = w2 = 0;
