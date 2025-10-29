@@ -2,7 +2,7 @@ class Solution {
     public String gcdOfStrings(String str1, String str2){
         var m = str1.length();
         var n = str2.length();
-        if((str1 + str2).equals(str2+str1)) {
+        if((str1 + str2).equals(str2+str1)){
             if(m>n){
                 while(n != 0) {
                     int temp = n;
