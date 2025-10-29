@@ -1,26 +1,23 @@
 class Solution {
-    public String gcdOfStrings(String str1, String str2){
-        var m = str1.length();
-        var n = str2.length();
-        if((str1 + str2).equals(str2+str1)){
-            if(m>n){
-                while(n != 0) {
-                    int temp = n;
-                    n = m % n;
-                    m = temp;
-                }
-               return str1.substring(0,m); 
-            }else{
-                 while(m != 0){
-                    int temp = m;
-                    m = n % m ;
-                    n = temp;
-                }
-                return str1.substring(0,n);
-            }
+    public boolean valid(String str1, String str2, int k){
+        int m = str1.length();
+        int n = str2.length();
+        if(m % k > 0 || n % k > 0 ){
+            return false;
         }else{
-            return "";
+            String base = str1.substring(0, k);
+            return str1.replace(base, "").isEmpty() && str2.replace(base, "").isEmpty();
         }
-        //return str1.substring(0,m);
+    }
+
+    public String gcdOfStrings(String str1, String str2) {
+        int m = str1.length();
+        int n = str2.length();
+        for (int i = Math.min(m,n); i >=1;--i){
+            if(valid(str1, str2, i)){
+                return str1.substring(0,i);
+            }
+        }
+        return "";
     }
 }
