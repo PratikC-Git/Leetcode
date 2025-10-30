@@ -2,7 +2,7 @@ class Solution {
     public boolean valid(String str1, String str2, int k){
         int m = str1.length();
         int n = str2.length();
-        if(m % k > 0 || n % k > 0 ){
+        if(m % k > 0 || n % k > 0){
             return false;
         }else{
             String base = str1.substring(0, k);
