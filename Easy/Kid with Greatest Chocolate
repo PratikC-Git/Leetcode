@@ -7,7 +7,7 @@ class Solution {
             if(candies[i] > max){
                 max = candies[i];
             }
-            i++;
+            i++ ;
         }
         for(int j = 0; j< candies.length; j++){
             if(candies[j] + extraCandies >= max){
